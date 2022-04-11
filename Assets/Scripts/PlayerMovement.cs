@@ -55,6 +55,16 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Artifact")
+        {
+            //ArtifactManagement.ArtifactCounter();
+            Destroy(other.gameObject);
+            Debug.Log("Artifact Counted");
+        }
+    }
+
 
 
 
