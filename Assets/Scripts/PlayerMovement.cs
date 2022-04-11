@@ -9,7 +9,8 @@ public class PlayerMovement : MonoBehaviour
 
     public float jumpForce = 10;
     public float speed = 5;
-    public float jumpCoolDown = 9;
+    private bool Jumped;
+    public bool isGrounded;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W))
         {
-            playerRigidBody.AddForce(0, jumpForce, 0, ForceMode.Impulse);
+            Jumped = true;
         }
 
         if (Input.GetKey(KeyCode.D))
@@ -36,7 +37,25 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
- 
+    private void OnCollisionStay()
+    {
+        isGrounded = true;
+    }
+    
+        
+    
+
+    private void FixedUpdate()
+    {
+        if (Jumped && isGrounded)
+        {
+            playerRigidBody.AddForce(0, jumpForce, 0, ForceMode.Impulse);
+            Jumped = false;
+            isGrounded = false;
+        }
+    }
+
+
 
 
 }
