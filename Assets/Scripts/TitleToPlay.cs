@@ -14,6 +14,11 @@ public class TitleToPlay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+    }
+
+    void StartPlay()
+    {
         SceneManager.LoadScene(2);
     }
 }
