@@ -4110,6 +4110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7c5115ed22f47f4ead7eb468153783c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ArtifactsCollected: 0
+  ToWinGameEndObject: {fileID: 668840046}
 --- !u!4 &1414502997
 Transform:
   m_ObjectHideFlags: 0
@@ -4918,6 +4920,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidBody: {fileID: 1716987483}
+  ArtifactManagementObject: {fileID: 1414502995}
   jumpForce: 100
   speed: 5
   isGrounded: 0

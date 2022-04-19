@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody playerRigidBody;
-  
+    public GameObject ArtifactManagementObject;
 
     public float jumpForce = 10;
     public float speed = 5;
@@ -62,7 +62,8 @@ public class PlayerMovement : MonoBehaviour
         {
             Destroy(other.gameObject);
             Debug.Log("Artifact Counted");
-            ArtifactManagement.ArtifactsCollected++;
+            ArtifactManagementObject.GetComponent<ArtifactManagement>().ArtifactCounter();
+            
         }
     }
 

@@ -2,15 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class ArtifactManagement  
+public class ArtifactManagement : MonoBehaviour  
 {
-    public static int ArtifactsCollected;
-    public static GameObject ToWinGameEndObject;
+    public int ArtifactsCollected;
+    public GameObject ToWinGameEndObject;
     // Start is called before the first frame update
 
 
-    public static void ArtifactCounter()
-    {   
+    public void ArtifactCounter()
+    {
+        ArtifactsCollected++;
+
         if (ArtifactsCollected >= 4)
         {
             ToWinGameEndObject.SetActive(true); 
