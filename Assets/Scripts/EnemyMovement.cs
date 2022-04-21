@@ -16,13 +16,13 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        variableToUpdate = GameObject.Find("PlayerStandIn").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        variableToUpdate = GameObject.Find("PlayerStandIn").transform;
+       
 
         if (Vector3.Distance(transform.position, variableToUpdate.position) >= MinDist)
         {
