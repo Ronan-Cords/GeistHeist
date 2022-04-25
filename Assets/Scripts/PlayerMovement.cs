@@ -7,11 +7,14 @@ public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody playerRigidBody;
     public GameObject ArtifactManagementObject;
+    public Transform Enemy;
 
     public float jumpForce = 10;
     public float speed = 5;
     private bool Jumped;
     public bool isGrounded;
+    public Vector3 DestroyRadius;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // BASIC MOVEMENT
         if (Input.GetKeyDown(KeyCode.W))
         {
             Jumped = true;
@@ -40,6 +44,22 @@ public class PlayerMovement : MonoBehaviour
         if (transform.position.y < -53)
         {
             SceneManager.LoadScene(3);
+        }
+
+        //ENEMY DESTROY
+        DestroyRadius = new Vector3(10, 2, 0);
+        if (Input.GetKey(KeyCode.E))
+        {
+            if (Vector3.Distance(Enemy.position, transform.position) <= DestroyRadius)
+            {
+                Debug.Log("Would Destroy");
+            }
+            Debug.Log("Getting Key");
+        }
+
+        if (Input.GetKey(KeyCode.Q))
+        {
+            // Use prefab position to destroy if within 3 units X behind
         }
     }
 

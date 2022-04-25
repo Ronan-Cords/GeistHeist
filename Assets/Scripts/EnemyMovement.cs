@@ -7,16 +7,18 @@ using UnityEngine.SceneManagement;
 public class EnemyMovement : MonoBehaviour
 {
     
-    int MoveSpeed;
-    int MinDist;
+    public int MoveSpeed = 50;
+    public int MinDist = 0;
 
     public GameObject PlayerStandIn;
     public Transform variableToUpdate;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
-        variableToUpdate = GameObject.Find("PlayerStandIn").transform;
+        variableToUpdate = GameObject.Find("EnemyScriptTest").transform;
     }
 
     // Update is called once per frame
@@ -28,6 +30,9 @@ public class EnemyMovement : MonoBehaviour
         {
             transform.position += transform.right * MoveSpeed * Time.deltaTime;
             transform.position += transform.up * MoveSpeed * Time.deltaTime;
+            transform.position -= transform.right * MoveSpeed * Time.deltaTime;
+            transform.position -= transform.up * MoveSpeed * Time.deltaTime;
+            Debug.Log("Working");
         }
 
 

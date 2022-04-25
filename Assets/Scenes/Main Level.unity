@@ -4903,8 +4903,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 5.683119}
-  m_Center: {x: 0, y: 0, z: -2.3415594}
+  m_Size: {x: 1, y: 1, z: 3.365912}
+  m_Center: {x: 0, y: 0, z: 1.0715511}
 --- !u!23 &1716987480
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4999,9 +4999,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerRigidBody: {fileID: 1716987483}
   ArtifactManagementObject: {fileID: 1414502995}
+  Enemy: {fileID: 2267401936149334061, guid: b187791a949a0db4f8484352f28230dc, type: 3}
   jumpForce: 100
   speed: 5
   isGrounded: 0
+  DestroyRadius: {fileID: 0}
 --- !u!1 &1720177604
 GameObject:
   m_ObjectHideFlags: 0

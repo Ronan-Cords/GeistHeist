@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1569805869459139748}
   - component: {fileID: 6614796418902828735}
   - component: {fileID: 557890020291133467}
-  - component: {fileID: -3287158241488008292}
+  - component: {fileID: 1588533894864107671}
   m_Layer: 0
   m_Name: EnemyStandIn
   m_TagString: Untagged
@@ -96,7 +96,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-3287158241488008292
+--- !u!114 &1588533894864107671
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,8 +105,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1970080007313799331}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cc3e6ee7e72d77419a69bc0d85661f7, type: 3}
+  m_Script: {fileID: 11500000, guid: b4fbea5e955dff549922075caf41340d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerStandIn: {fileID: 0}
-  variableToUpdate: {fileID: 0}
+  speed: 5
