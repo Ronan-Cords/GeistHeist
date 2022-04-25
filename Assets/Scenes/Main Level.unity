@@ -5000,10 +5000,10 @@ MonoBehaviour:
   playerRigidBody: {fileID: 1716987483}
   ArtifactManagementObject: {fileID: 1414502995}
   Enemy: {fileID: 2267401936149334061, guid: b187791a949a0db4f8484352f28230dc, type: 3}
+  Player: {fileID: 1716987482}
   jumpForce: 100
   speed: 5
   isGrounded: 0
-  DestroyRadius: {fileID: 0}
 --- !u!1 &1720177604
 GameObject:
   m_ObjectHideFlags: 0

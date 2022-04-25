@@ -8,12 +8,13 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody playerRigidBody;
     public GameObject ArtifactManagementObject;
     public Transform Enemy;
+    public Transform Player;
 
     public float jumpForce = 10;
     public float speed = 5;
     private bool Jumped;
     public bool isGrounded;
-    public Vector3 DestroyRadius;
+    
     
 
     // Start is called before the first frame update
@@ -47,14 +48,21 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //ENEMY DESTROY
-        DestroyRadius = new Vector3(10, 2, 0);
+        
         if (Input.GetKey(KeyCode.E))
         {
-            if (Vector3.Distance(Enemy.position, transform.position) <= DestroyRadius)
+            if (Enemy.position.x <= Player.position.x + 6)
             {
-                Debug.Log("Would Destroy");
+                if (Enemy.position.y <= Player.position.y + 6 || Enemy.position.y >= Player.position.y -6)
+                {
+                    Debug.Log("Would Destroy");
+                }
+                
             }
-            Debug.Log("Getting Key");
+            else
+            {
+                Debug.Log("Get Closer");
+            }
         }
 
         if (Input.GetKey(KeyCode.Q))
