@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class EnemyFollwo : MonoBehaviour
 {
-    public float speed = 7;
+    public float speed = 7f;
     private Transform target;
     // Start is called before the first frame update
     void Start()
