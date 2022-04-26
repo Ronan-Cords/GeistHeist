@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject ArtifactManagementObject;
     public Transform Enemy;
     public Transform Player;
+    public GameObject EnemyDestroyFront;
 
     public float jumpForce = 10;
     public float speed = 5;
@@ -49,25 +50,14 @@ public class PlayerMovement : MonoBehaviour
 
         //ENEMY DESTROY
         
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            if (Enemy.position.x <= Player.position.x + 6)
-            {
-                if (Enemy.position.y <= Player.position.y + 6 || Enemy.position.y >= Player.position.y -6)
-                {
-                    Debug.Log("Would Destroy");
-                }
-                
-            }
-            else
-            {
-                Debug.Log("Get Closer");
-            }
+            EnemyDestroyFront.SetActive(true);
         }
 
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKeyUp(KeyCode.E))
         {
-            // Use prefab position to destroy if within 3 units X behind
+            EnemyDestroyFront.SetActive(false);
         }
     }
 
