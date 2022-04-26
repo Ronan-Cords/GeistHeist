@@ -636,7 +636,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: StartPlay
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &899655581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -940,6 +940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea6e46d3ee91d1d41a07ba1af0d46eca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playButton: {fileID: 899655580}
 --- !u!4 &1534867847
 Transform:
   m_ObjectHideFlags: 0

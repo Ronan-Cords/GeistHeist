@@ -2,18 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class TitleToPlay : MonoBehaviour
 {
+    public Button playButton;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        Button btn = playButton.GetComponent<Button>();
+        btn.onClick.AddListener(StartPlay);
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+        
+            
+        
         
     }
 
@@ -21,4 +30,6 @@ public class TitleToPlay : MonoBehaviour
     {
         SceneManager.LoadScene(2);
     }
+
+    
 }
