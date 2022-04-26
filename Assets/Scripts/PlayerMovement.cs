@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform Enemy;
     public Transform Player;
     public GameObject EnemyDestroyFront;
+    public GameObject EnemyDestroyBack;
 
     public float jumpForce = 10;
     public float speed = 5;
@@ -59,6 +60,17 @@ public class PlayerMovement : MonoBehaviour
         {
             EnemyDestroyFront.SetActive(false);
         }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            EnemyDestroyBack.SetActive(true);
+        }
+
+        if (Input.GetKeyUp(KeyCode.Q))
+        {
+            EnemyDestroyBack.SetActive(false);
+        }
+            
     }
 
     private void OnCollisionStay()

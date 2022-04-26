@@ -16,6 +16,16 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        EnemyCount();
+    }
+
+    public void EnemyDestroyDetect()
+    {
+        enemyCount--;
+    }
+
+    void EnemyCount()
+    {
         if (enemyCount < 3)
         {
 
