@@ -5,12 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class EnemyFollwo : MonoBehaviour
 {
-    public float speed = 7f;
+    public float speed = 7.5f;
     private Transform target;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        
     }
 
     // Update is called once per frame
