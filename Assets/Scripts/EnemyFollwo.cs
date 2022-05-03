@@ -7,7 +7,9 @@ public class EnemyFollwo : MonoBehaviour
 {
     public float speed = 7.5f;
     private Transform target;
-    
+
+    public SpriteRenderer enemyRenderer;
+   
 
 
     // Start is called before the first frame update
@@ -23,6 +25,7 @@ public class EnemyFollwo : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
 
+        
     }
 
     private void OnTriggerEnter(Collider other)
