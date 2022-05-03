@@ -5121,6 +5121,11 @@ MonoBehaviour:
   jumpForce: 100
   speed: 5
   isGrounded: 0
+  playerRenderer: {fileID: 1716987480}
+  PlayerAttackSprite: {fileID: 21300000, guid: b7e935596956968468ceb0404b8d080f, type: 3}
+  PlayerAttackBehindSprite: {fileID: 21300000, guid: 8953a7c8c84440c42a895e19aee7d28d, type: 3}
+  PlayerIdleSprite: {fileID: 21300000, guid: 599c01a4588c5a647bef725fbfe9b521, type: 3}
+  PlayerIdleBehindSprite: {fileID: 21300000, guid: ee10185d889f0954fbe19215bd962558, type: 3}
 --- !u!1 &1720177604
 GameObject:
   m_ObjectHideFlags: 0

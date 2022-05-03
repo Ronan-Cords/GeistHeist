@@ -18,6 +18,10 @@ public class PlayerMovement : MonoBehaviour
     public bool isGrounded;
 
     public SpriteRenderer playerRenderer;
+    public Sprite PlayerAttackSprite;
+    public Sprite PlayerAttackBehindSprite;
+    public Sprite PlayerIdleSprite;
+    public Sprite PlayerIdleBehindSprite;
     
     
 
@@ -25,11 +29,19 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         playerRigidBody = GetComponent<Rigidbody>();
+        playerRenderer = gameObject.GetComponent<SpriteRenderer>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        // SPRITE NULL STATEMENT
+
+        if (playerRenderer.sprite == null)
+        {
+            playerRenderer.sprite = PlayerIdleSprite;
+        }
         // BASIC MOVEMENT
         if (Input.GetKeyDown(KeyCode.W))
         {
@@ -39,7 +51,6 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             transform.Translate(Vector3.right * Time.deltaTime * speed);
-            playerRenderer.flipX = false;
         }
 
         if (Input.GetKey(KeyCode.A))
@@ -47,6 +58,12 @@ public class PlayerMovement : MonoBehaviour
             transform.Translate(Vector3.left * Time.deltaTime * speed);
             playerRenderer.flipX = true;
         }
+
+        if (Input.GetKeyUp(KeyCode.A))
+        {
+            playerRenderer.flipX = false;
+        }
+       
 
         if (transform.position.y < -53)
         {
@@ -58,21 +75,26 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             EnemyDestroyFront.SetActive(true);
+            playerRenderer.sprite = PlayerAttackSprite;
         }
 
         if (Input.GetKeyUp(KeyCode.E))
         {
             EnemyDestroyFront.SetActive(false);
+            playerRenderer.sprite = null;
+
         }
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
             EnemyDestroyBack.SetActive(true);
+            playerRenderer.sprite = PlayerAttackBehindSprite;
         }
 
         if (Input.GetKeyUp(KeyCode.Q))
         {
             EnemyDestroyBack.SetActive(false);
+            playerRenderer.sprite = null;
         }
             
     }
@@ -106,6 +128,8 @@ public class PlayerMovement : MonoBehaviour
             
         }
     }
+
+
 
  
 
