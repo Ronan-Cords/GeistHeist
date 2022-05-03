@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 5;
     private bool Jumped;
     public bool isGrounded;
+
+    public SpriteRenderer playerRenderer;
     
     
 
@@ -37,11 +39,13 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             transform.Translate(Vector3.right * Time.deltaTime * speed);
+            playerRenderer.flipX = false;
         }
 
         if (Input.GetKey(KeyCode.A))
         {
             transform.Translate(Vector3.left * Time.deltaTime * speed);
+            playerRenderer.flipX = true;
         }
 
         if (transform.position.y < -53)
